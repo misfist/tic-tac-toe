@@ -68,14 +68,14 @@ jQuery(function(){
 
 	var playAgain = function( id, text ) {
 
-		$( id ).append();
 		$( id ).after( '<button id="reload" class="btn btn-success">' );
 		$( '#reload' ).html( text );
 
 		$( '#reload' ).on( 'click', function() {
-			console.log( 'clicked' );
+
 			window.location.reload();
 
+			// Re-enable buttons to address Firefox issue
 			$( id ).find( 'button' ).prop( 'disabled', false );
 
 		} );
