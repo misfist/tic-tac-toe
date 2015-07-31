@@ -21,27 +21,60 @@ jQuery(function(){
 		}
 	}
 
+
+
+	var computerTurn = function( board, slots ) {
+
+		// Get number of remaining slots
+		slotsLength = slots.length;
+
+		// Pick a random number from remaining slots
+		randomNum = Math.floor( Math.random() * slotsLength );
+
+		// Capture slot (it's an integer)
+		computer = slots[randomNum];
+
+		// Add a class and disable button
+		$( '#' + computer ).addClass('selected o-mark').prop( 'disabled', true );
+		$( '#' + computer ).html( 'O' );
+
+		// Record turn
+		board[computer - 1] = 'O';
+
+		slots.splice( randomNum, 1 );
+
+	}
+
+
+	var playerTurn = function( board, slots, context ) {
+
+		// Add a class and disable button
+		context.addClass( 'selected x-mark' ).prop( 'disabled', true );
+		context.html( 'X' );
+
+		// Capture slot
+		player = context.attr( 'id' );
+
+		// Convert to slot string to integer
+		player = parseInt( player );
+
+		// Record turn
+		board[ player - 1 ] = 'X';
+
+		// Remove from available slots
+		slots.splice( slots.indexOf(player), 1 );
+
+	}
+
+
 	$( '#tic-tac-toe' ).on( 'click', 'button', function( event ) {
 
 		if( !winner( board, 'X' ) && !winner( board, 'O' ) ) {
 
 			// Player Turn
 
-			// Add a class and disable button
-			$( this ).addClass( 'selected x-mark' ).prop( 'disabled', true );
-			$( this ).html( 'X' );
+			playerTurn( board, slots, $( this ) );
 
-			// Capture slot
-			player = $( this ).attr( 'id' );
-
-			// Convert to slot string to integer
-			player = parseInt( player );
-
-			// Record turn
-			board[ player - 1 ] = 'X';
-
-			// Remove from available slots
-			slots.splice( slots.indexOf(player), 1 );
 
 			if( winner( board, 'X' ) ) {
 
@@ -52,23 +85,7 @@ jQuery(function(){
 
 			// Computer Turn
 
-			// Get number of remaining slots
-			slotsLength = slots.length;
-
-			// Pick a random number from remaining slots
-			randomNum = Math.floor( Math.random() * slotsLength );
-
-			// Capture slot (it's an integer)
-			computer = slots[randomNum];
-
-			// Add a class and disable button
-			$( '#' + computer ).addClass('selected o-mark').prop( 'disabled', true );
-			$( '#' + computer ).html( 'O' );
-
-			// Record turn
-			board[computer - 1] = 'O';
-
-			slots.splice( randomNum, 1 );
+			computerTurn( board, slots );
 
 			// If winning combo, computer wins
 			if( winner( board, 'O' ) ) {
