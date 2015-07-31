@@ -1,0 +1,30 @@
+.container {
+	text-align: center;
+}
+
+table {
+	margin: 0 auto;
+}
+
+td {
+	text-align: center;
+}
+
+button {
+	height: 50px;
+	width: 50px;
+	border: 1px solid #ccc;
+}
+
+.selected {
+	color: #fff;
+	font-weight: bold;
+}
+
+.x-mark {
+	background-color: #286090;
+}
+
+.o-mark{
+	background-color: #EC971F;
+}
