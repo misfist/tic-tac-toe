@@ -33,3 +33,11 @@ button {
 	-o-transition: all 1s ease;
 	transition: all 1s ease;
 }
+
+#reload {
+	height: auto;
+	width: auto;
+	/*padding: .25em;
+	background-color: #C9302C;
+	color: #fff;*/
+}

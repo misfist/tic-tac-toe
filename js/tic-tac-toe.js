@@ -66,6 +66,23 @@ jQuery(function(){
 	}
 
 
+	var playAgain = function( id, text ) {
+
+		$( id ).append();
+		$( id ).after( '<button id="reload" class="btn btn-success">' );
+		$( '#reload' ).html( text );
+
+		$( '#reload' ).on( 'click', function() {
+			console.log( 'clicked' );
+			window.location.reload();
+
+			$( id ).find( 'button' ).prop( 'disabled', false );
+
+		} );
+
+	}
+
+
 	$( '#tic-tac-toe' ).on( 'click', 'button', function( event ) {
 
 		if( !winner( board, 'X' ) && !winner( board, 'O' ) ) {
@@ -78,6 +95,9 @@ jQuery(function(){
 			if( winner( board, 'X' ) ) {
 
 				alert( 'You Win!' );
+
+				playAgain( '#tic-tac-toe', 'Play Again' );
+
 				return;
 
 			}
@@ -90,6 +110,9 @@ jQuery(function(){
 			if( winner( board, 'O' ) ) {
 
 				alert( 'Computer Wins!' );
+
+				playAgain( '#tic-tac-toe', 'Play Again' );
+
 				return;
 
 			}
@@ -98,6 +121,9 @@ jQuery(function(){
 			if( slots.length == 0 ) {
 
 				alert( 'It\'s a Tie.' );
+
+				playAgain( '#tic-tac-toe', 'Play Again' );
+
 				return;
 
 			}
