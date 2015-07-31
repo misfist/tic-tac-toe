@@ -22,7 +22,6 @@ jQuery(function(){
 	}
 
 
-
 	var computerTurn = function( board, slots ) {
 
 		// Get number of remaining slots
@@ -75,7 +74,7 @@ jQuery(function(){
 
 			playerTurn( board, slots, $( this ) );
 
-
+			// Outcome: if winning combo, player wins
 			if( winner( board, 'X' ) ) {
 
 				alert( 'You Win!' );
@@ -87,7 +86,7 @@ jQuery(function(){
 
 			computerTurn( board, slots );
 
-			// If winning combo, computer wins
+			// Outcome: if winning combo, computer wins
 			if( winner( board, 'O' ) ) {
 
 				alert( 'Computer Wins!' );
@@ -95,7 +94,7 @@ jQuery(function(){
 
 			}
 
-			// If not winning combo, but var slots is empty, it's a tie
+			// Outcome, if no winning combo and no more slots, it's a tie
 			if( slots.length == 0 ) {
 
 				alert( 'It\'s a Tie.' );
