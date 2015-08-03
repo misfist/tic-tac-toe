@@ -85,6 +85,7 @@ jQuery(function(){
 
 	$( '#tic-tac-toe' ).on( 'click', 'button', function( event ) {
 
+
 		if( !winner( board, 'X' ) && !winner( board, 'O' ) ) {
 
 			// Player Turn
