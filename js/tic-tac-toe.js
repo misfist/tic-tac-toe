@@ -6,6 +6,9 @@ jQuery(function(){
 	var player;
 	var computer;
 
+	// Make sure buttons are enabled on start or page refresh
+	$( '#tic-tac-toe' ).find( 'button' ).prop( 'disabled', false );
+
 	var winner = function( array, player ) {
 		if (
 			( array[0] == player && array[1] == player && array[2] == player ) ||
