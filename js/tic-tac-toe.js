@@ -74,6 +74,8 @@ var winningMove = function( board, player ) {
 
 		var tempBoard = $.extend(true, {}, board);
 
+		// console.log( 'tempBoard: ', tempBoard );
+
 		// Assign player mark to the spot in the temp board
 
 		tempBoard[moves[i]] = player;
