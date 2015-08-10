@@ -14,8 +14,6 @@ var board = {
 
 var player, computer;
 
-
-
 // Get Available Moves
 // Input: object of key => value pairs corresponding to spot on board
 // Output: array of numbers corresponding to open spots on board
@@ -109,6 +107,8 @@ var playerTurn = function( board, player, context ) {
 
 	board[move] = player;
 
+	console.log( 'Player move board[move] index ', move );
+
 }
 
 
@@ -138,6 +138,8 @@ var computerTurn =  function( board ) {
 	// Assign mark to spot in board object
 
 	board[move] = player;
+
+	console.log( 'Computer move board[move] index ', move );
 
 	// Disable button
 	$( '#' + move ).addClass( 'selected '+ player.toLowerCase() + '-mark' ).prop( 'disabled', true );
@@ -192,7 +194,24 @@ $(document).ready(function() {
 
 		// COMPUTER
 
-		computerTurn( board );
+		var moves = availableMoves( board );
+
+
+		if( moves.length > 0 ) {
+
+			computerTurn( board );
+
+		} else {
+
+			// If There Are No Moves Available and No Winners, it's a Tie
+			
+			alert( 'It\'s a Tie!' );
+
+			playAgain( '#tic-tac-toe', 'Play Again' );
+
+			return;
+
+		}
 
 		// If Computer Wins
 
@@ -206,20 +225,6 @@ $(document).ready(function() {
 
 		}
 
-
-		// If There Are No Moves Available and No Winners, it's a Tie
-
-		var moves = availableMoves( board );
-
-		if( moves.length = 0 ) {
-
-			alert( 'It\'s a Tie!' );
-
-			playAgain( '#tic-tac-toe', 'Play Again' );
-
-			return;
-
-		}
 
 	} );
 
