@@ -1,24 +1,23 @@
 {
-  "name": "sandbox-index",
-  "version": "1.0.0",
-  "description": "Index page for sandbox.misfist.com",
+  "name": "tic-tac-toe",
+  "version": "1.0.1",
+  "description": "Tic-tac-toe game built with jQuery",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/misfist/tic-tac-toe"
   },
   "keywords": [
-    "multi-site",
-    "wordpress",
-    "network"
+    "jQuery",
+    "games"
   ],
   "author": "Pea, Glocal",
   "license": "GPLv3",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/misfist/tic-tac-toe/issues"
   },
   "homepage": "",
   "devDependencies": {
