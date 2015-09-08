@@ -1,46 +1,84 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Tic Tac Toe</title>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	    <meta name="description" content="Simple Tic-Tac-Toe Game with jQuery">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">	
-		<link rel="stylesheet" href="css/style.css">
-	</head>
-	<body>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Tic-Tac-Toe</title>
 
-		<div class="container">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Tic-tac-toe game built with jQuery.">
+    
+    <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+    <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>  
 
-			<h1>Tic Tac Toe</h1>
-		
-			<div id="message" role="alert"></div>
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
 
-			<table id="tic-tac-toe">
-				<tr>
-					<td><button id="1"></button></td>
-					<td><button id="2"></button></td>
-					<td><button id="3"></button></td>
-				</tr>
-				<tr>
-					<td><button id="4"></button></td>
-					<td><button id="5"></button></td>
-					<td><button id="6"></button></td>
-				</tr>
-				<tr>
-					<td><button id="7"></button></td>
-					<td><button id="8"></button></td>
-					<td><button id="9"></button></td>
-				</tr>
-			<table>
+  <body>
+    <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+              <h1 class="navbar-brand">Tic-Tac-Toe</h1>
+            </div>
 
-			<footer>[<a href="https://github.com/misfist/tic-tac-toe" target="_blank">Source</a>]</footer>
-		
-		</div>
+            <div class="collapse navbar-collapse" id="main-navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="https://twitter.com/misfist" target="_blank"><span class="fa fa-twitter"></span> Twitter</a></li>
+                <li><a href="https://www.linkedin.com/in/patricialutz" target="_blank"><span class="fa fa-linkedin"></span> LinkedIn</a></li>
+                <li><a href="https://github.com/misfist" target="_blank"><span class="fa fa-github"></span> GitHub</a></li>
+                <li><a href="http://www.freecodecamp.com/misfist" target="_blank"><span class="fa fa-fire"></span> freeCodeCamp</a></li>
+              </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="main-section" role="main">
+      <div class="container">
 
-	</body>
-	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-	<script src="js/tic-tac-toe.js"></script>
+        <h1>Tic Tac Toe</h1>
+      
+        <div id="message" role="alert"></div>
 
+        <table id="tic-tac-toe">
+          <tr>
+            <td><button id="1"></button></td>
+            <td><button id="2"></button></td>
+            <td><button id="3"></button></td>
+          </tr>
+          <tr>
+            <td><button id="4"></button></td>
+            <td><button id="5"></button></td>
+            <td><button id="6"></button></td>
+          </tr>
+          <tr>
+            <td><button id="7"></button></td>
+            <td><button id="8"></button></td>
+            <td><button id="9"></button></td>
+          </tr>
+        <table>
+      
+      </div>
+    </section>
+    <footer id="site-footer" class="navbar-fixed-bottom">
+      <div class="container">
+         <nav class="footer-nav pull-right">
+          <ul class="list-inline">
+            <li><a href="https://twitter.com/misfist" target="_blank"><span class="fa fa-twitter"></span> Twitter</a></li>
+            <li><a href="https://www.linkedin.com/in/patricialutz" target="_blank"><span class="fa fa-linkedin"></span> LinkedIn</a></li>
+            <li><a href="https://github.com/misfist" target="_blank"><span class="fa fa-github"></span> GitHub</a></li>
+            <li><a href="http://www.freecodecamp.com/misfist" target="_blank"><span class="fa fa-fire"></span> freeCodeCamp</a></li>
+          </ul>
+        </nav>
+        <div class="copyleft"><span class="fa fa-copyright fa-flip-horizontal"></span> Copyleft &bull; <a href="https://github.com/misfist/tic-tac-toe" target="_blank"><i class="fa fa-github"></i> Source</a></div>
+      </div>
+    </footer>
+      <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+      <script src="assets/js/main.js"></script>
+      </body>
 </html>

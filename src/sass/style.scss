@@ -1,0 +1,252 @@
+
+@import 'reset';
+
+// Variables
+
+$primary: #286090;
+$primary-dark: #2D2D2D;
+$primary-light: #989898;
+$secondary: #EC971F;
+$secondary-dark: #434343;
+$secondary-light: #E2E2E1;
+$tertiary: $secondary;
+$accent: #B94019;
+
+$white: #fff;
+$black: #333;
+
+$x-color: $primary;
+$o-color: $secondary;
+
+
+// RWD BREAKPOINTS 
+// mobile first! so you only have to use floats etc in larger sizes
+// set breakpoints where your content breaks, not particular devices
+
+$xs: 768px; //Extra Small Phones
+$sm: 769px; //Small Devices Tablets and Up
+$md: 992px; //Medium Devices  Desktops and Up
+$lg: 1200px; //Large Devices Large Desktops and Up
+
+@mixin breakpoint($point) {
+  @if $point == xs {
+    @media screen and (max-width: 768px)  { @content; } 
+  }
+  @if $point == sm {
+    @media screen and (min-width: 769px) { @content; }
+  }
+  @if $point == md {
+    @media screen and (min-width: 992px) { @content; }
+  }
+  @else if $point == lg {
+    @media screen and (min-width: 1200px) { @content; }
+  }
+}
+
+// Fonts
+$serif: 'Palatino', Times, serif;
+$sans-serif: 'Audiowide', 'Helvetica', Arial, sans-serif;
+$heading: $sans-serif;
+$body-text: $sans-serif;
+
+
+// Extends
+%header {
+  font-family: $heading;
+  color: $primary;
+  text-shadow: 1px 1px 1px $black;
+  text-shadow: -1px -1px -1px $primary-light;
+}
+
+// CLEARFIX
+// for old markup w/clearfix class:
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+// for semantic markup, a la http://blog.teamtreehouse.com/a-better-clearfix-with-sass
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+%text-background {
+    padding: 10px;
+    background: transparentize($primary-dark, .7);
+}
+
+
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: $sans-serif;
+}
+
+// Block Elements
+h1,
+h2 {
+  @extend %header;
+  margin: 10px 0;
+}
+
+h1 {
+  font-size: 46px;
+  margin-top: 30px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+section {
+  @extend %clearfix;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  background-position: center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+// Main Sections
+
+.container {
+  @extend %clearfix;
+}
+
+#main-nav {
+  background-color: $primary;
+
+  a,
+  a:link {
+    color: $white;
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+  #main-nav {
+    .navbar-nav {
+      float: right;
+    }
+  }
+
+}
+
+
+// Main Styles
+.container {
+  text-align: center;
+}
+
+table {
+  margin: 0 auto;
+
+  td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  button {
+    height: 100px;
+    width: 100px;
+    border: 1px solid #ccc;
+    font-size: 36px;
+  }
+}
+
+.selected {
+  color: #fff;
+  font-weight: bold;
+}
+
+.x-mark {
+  background-color: $x-color;
+}
+
+.o-mark{
+  background-color: $o-color;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+#reload {
+  height: auto;
+  width: auto;
+  margin-top: 10px;
+}
+
+footer {
+  margin-top: 20px;
+  background-color: $primary-dark;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  color: $white;
+  a,
+  a:link {
+    color: $white;
+    &:hover,
+    &:focus {
+      color: $white;
+    }
+  }
+}
+
+// Common Elements
+
+em {
+  font-style: italic;
+}
+
+
+.list-inline {
+  li {
+    margin-right: 4px;
+    margin-left: 4px;
+  }
+}
+
+.copyleft {
+  color: $primary-light;
+
+  a,
+  a:link {
+    color: $primary-light;
+  }
+}
+
+// Specific Elements
+.navbar-brand,
+.navbar-inverse .navbar-brand {
+
+  color: $white;
+  margin: 0;
+  a,
+  a:link {
+    color: $white;
+  }
+}
+
+.navbar-inverse .navbar-toggle {
+  border-color: $white;
+}
+
+.social-links {
+  li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
